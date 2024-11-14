@@ -12,7 +12,7 @@ options.add_argument('--disable-extensions')
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
-# URL de la pagina de Ingeniería de Sistemas
+# URL de la pagina de Ingenieria de Sistemas
 url = 'https://cybertesis.unmsm.edu.pe/collection/8c7c6dc5-2beb-4b23-a722-50012376769e'
 driver.get(url)
 time.sleep(5)
