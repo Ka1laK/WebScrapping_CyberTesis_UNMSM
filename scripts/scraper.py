@@ -59,7 +59,7 @@ while True:
     autores_elements = driver.find_elements(By.XPATH, "//div[contains(@class, 'MuiStack-root css-kvb41a')]")
     for autor in autores_elements:
         # Obtener todos los elementos <span> dentro del contenedor de autores y concatenarlos
-        autores_texto = ", ".join([span.text for span in autor.find_elements(By.TAG_NAME, "span")])
+        autores_texto = " | ".join([span.text for span in autor.find_elements(By.TAG_NAME, "span")])
         autores.append(autores_texto)
 
     # Verificador de longitud de listas
@@ -77,5 +77,5 @@ while True:
         break
 
 data = pd.DataFrame({'Titulo': titulos, 'Anio': anios, 'Autor(es)': autores})
-data.to_csv('publicaciones_cybertesis_UNMSM.csv', index=False)
+data.to_csv('data_output/publicaciones_cybertesis_UNMSM.csv', index=False)
 driver.quit()
